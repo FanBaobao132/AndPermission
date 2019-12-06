@@ -15,6 +15,7 @@
  */
 package com.yanzhenjie.permission.checker;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -31,6 +32,7 @@ class PhoneStateReadTest implements PermissionTest {
         this.mContext = context;
     }
 
+    @SuppressLint("MissingPermission")
     @Override
     public boolean test() throws Throwable {
         PackageManager packageManager = mContext.getPackageManager();

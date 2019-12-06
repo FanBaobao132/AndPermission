@@ -3,6 +3,7 @@ apply plugin: rootProject.ext.plugins.application
 def getReleaseKeyStoreFile() {
     return file("C:/key/test_tool.jks")
 }
+
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
@@ -32,6 +33,10 @@ android {
         debug {
             signingConfig signingConfigs.config
         }
+    }
+
+    lintOptions {
+        abortOnError false
     }
     // 定义的versionName
 //    versionName VERSION_NAME
