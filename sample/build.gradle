@@ -42,6 +42,10 @@ android {
     lintOptions {
         abortOnError false
     }
+    aaptOptions {
+        cruncherEnabled = false
+        useNewCruncher = false
+    }
     // 定义的versionName
 //    versionName VERSION_NAME
 
