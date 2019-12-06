@@ -15,6 +15,7 @@
  */
 package com.yanzhenjie.permission.runtime;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -69,6 +70,7 @@ public class Runtime implements RuntimeOption {
         return FACTORY.create(mSource).permission(permissions);
     }
 
+    @SuppressLint("WrongConstant")
     @Override
     public PermissionRequest permission(@NonNull String[]... groups) {
         List<String> permissionList = new ArrayList<>();
