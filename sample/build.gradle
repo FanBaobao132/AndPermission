@@ -1,5 +1,8 @@
 apply plugin: rootProject.ext.plugins.application
-
+//定义签名文件路径
+def getReleaseKeyStoreFile() {
+    return file("C:/key/test_tool.jks")
+}
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
@@ -11,6 +14,49 @@ android {
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
     }
+
+    signingConfigs {
+        config {
+            keyAlias 'test'
+            keyPassword '13052068978'
+            storeFile getReleaseKeyStoreFile()
+            storePassword '13052068978'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            signingConfig signingConfigs.config
+        }
+    }
+    // 定义的versionName
+//    versionName VERSION_NAME
+
+// 定义编译生成的apk名格式
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def newName
+
+            if ('true' == IS_JENKINS) {
+                println("jenkins build ==> $BUILD_TIME")
+                newName = "$APK_NAME-v$VERSION_NAME-$BUILD_TIME-${variant.buildType.name}-unsigned.apk"
+            } else {
+                if ('debug' == variant.buildType.name) {
+                    newName = "$APK_NAME-v${rootProject.android.versionName}-${rootProject.android.versionCode}-debug.apk"
+                } else {
+                    newName = "$APK_NAME-v${rootProject.android.versionName}-${rootProject.android.versionCode}-${variant.buildType.name}.apk"
+                }
+            }
+
+            output.outputFileName newName
+        }
+
+    }
+
 }
 
 dependencies {
