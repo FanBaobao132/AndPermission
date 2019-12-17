@@ -18,11 +18,11 @@ android {
 
     signingConfigs {
         config {
-            keyAlias 'test'
-            keyPassword '13052068978'
-            storeFile file()
-//            storeFile file('../test_tool.jks')
-            storePassword '13052068978'
+            keyAlias ''
+            keyPassword ''
+//            storeFilefile('../test_tool.jks')
+            storeFile file('../test_tool.jks')
+            storePassword ''
         }
     }
     buildTypes {
