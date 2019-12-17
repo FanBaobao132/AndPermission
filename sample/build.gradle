@@ -29,12 +29,12 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
-            signingConfig signingConfigs.config
+//            signingConfig signingConfigs.config
             aaptOptions.cruncherEnabled = false
             aaptOptions.useNewCruncher = false
         }
         debug {
-            signingConfig signingConfigs.config
+//            signingConfig signingConfigs.config
             aaptOptions.cruncherEnabled = false
             aaptOptions.useNewCruncher = false
         }
