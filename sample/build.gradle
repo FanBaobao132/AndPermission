@@ -20,8 +20,8 @@ android {
         config {
             keyAlias 'test'
             keyPassword '13052068978'
-//            storeFile getReleaseKeyStoreFile()
-            storeFile file('../test_tool.jks')
+            storeFile getReleaseKeyStoreFile()
+//            storeFile file('../test_tool.jks')
             storePassword '13052068978'
         }
     }
