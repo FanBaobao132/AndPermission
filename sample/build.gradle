@@ -1,6 +1,6 @@
 apply plugin: rootProject.ext.plugins.application
 //定义签名文件路径
-def getReleaseKeyStoreFile() {
+def file() {
     return file("C:/key/test_tool.jks")
 }
 
@@ -20,7 +20,7 @@ android {
         config {
             keyAlias 'test'
             keyPassword '13052068978'
-            storeFile getReleaseKeyStoreFile()
+            storeFile file()
 //            storeFile file('../test_tool.jks')
             storePassword '13052068978'
         }
