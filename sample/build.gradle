@@ -18,11 +18,11 @@ android {
 
     signingConfigs {
         config {
-            keyAlias ''
-            keyPassword ''
+            keyAlias 'test'
+            keyPassword '13052068978'
 //            storeFilefile('../test_tool.jks')
-            storeFile file('../test_tool.jks')
-            storePassword ''
+            storeFile file('C:/Xiaomi/test_tool.jks')
+            storePassword '13052068978'
         }
     }
     buildTypes {
