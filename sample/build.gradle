@@ -30,12 +30,12 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
-//            signingConfig signingConfigs.config
+            signingConfig signingConfigs.config
             aaptOptions.cruncherEnabled = false
             aaptOptions.useNewCruncher = false
         }
         debug {
-//            signingConfig signingConfigs.config
+            signingConfig signingConfigs.config
             aaptOptions.cruncherEnabled = false
             aaptOptions.useNewCruncher = false
         }
@@ -57,7 +57,7 @@ android {
 
             if ('true' == IS_JENKINS) {
                 println("jenkins build ==> $BUILD_TIME")
-                newName = "$APK_NAME-v$VERSION_NAME-$BUILD_TIME-${variant.buildType.name}-unsigned.apk"
+                newName = "$APK_NAME-v$VERSION_NAME-$BUILD_TIME-${variant.buildType.name}.apk"
             } else {
                 if ('debug' == variant.buildType.name) {
                     newName = "$APK_NAME-v${rootProject.android.versionName}-${rootProject.android.versionCode}-debug.apk"
