@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_install).setOnClickListener(this);
         findViewById(R.id.btn_overlay).setOnClickListener(this);
         findViewById(R.id.btn_write_setting).setOnClickListener(this);
-        Log.e("xxxx", BuildConfig.baseUrl);
+        Log.e("xxxx", BuildConfig.BASE_URL);
     }
 
     @Override
