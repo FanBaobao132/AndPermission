@@ -21,6 +21,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,6 +40,7 @@ import com.yanzhenjie.permission.AndPermission;
 import com.yanzhenjie.permission.runtime.Permission;
 import com.yanzhenjie.permission.runtime.PermissionDef;
 import com.yanzhenjie.permission.sample.App;
+import com.yanzhenjie.permission.sample.BuildConfig;
 import com.yanzhenjie.permission.sample.InstallRationale;
 import com.yanzhenjie.permission.sample.NotifyListenerRationale;
 import com.yanzhenjie.permission.sample.NotifyRationale;
@@ -91,6 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_install).setOnClickListener(this);
         findViewById(R.id.btn_overlay).setOnClickListener(this);
         findViewById(R.id.btn_write_setting).setOnClickListener(this);
+        Log.e("xxxx", BuildConfig.baseUrl);
     }
 
     @Override
